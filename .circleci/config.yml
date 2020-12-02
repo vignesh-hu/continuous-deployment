@@ -79,7 +79,7 @@ jobs:
       - run:
           name: Deploy to EB if branch is Master
           command: |
-            eb use demo-dev --profile app  
+            eb use demo-dev --profile app --region "us-east-1"
             eb deploy --profile app
          
 #
