@@ -5,11 +5,10 @@ branch-defaults:
     environment: 
      global: vigneshdemo-env
   application_name: vigneshdemo
-  AWS_ACCESS_KEY_ID: AKIA6Q42TZMMGZB6LP4C
+  aws-access-id: AKIA6Q42TZMMGZB6LP4C
   AWS_SECERT_KEY_ID: Xid38xVjT+YCTrQ3f3T9j3y68qE5LTBJk0F0sMWU
-  default_platform: 64bit Amazon Linux 2017.09 v2.6.2 running Ruby 2.4 (Passenger Standalone)
-  default_region: us-west-1
+  default_platform: Java 8 running on 64bit Amazon Linux/2.11.1
+  default_region: us-east-1
   sc: git
 deploy:
-
   artifact: target/demo-1.0.jar
