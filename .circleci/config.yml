@@ -65,8 +65,7 @@ jobs:
       - run:
           name: Deploying
           command: |
-            echo "$aws_access_id"
-            eb init continuous-deployment-demo -p "Java 8 running on 64bit Amazon Linux/2.11.1" --region "us-east-1"
+            eb init demo -p "Java 8 running on 64bit Amazon Linux/2.11.1" --region "us-east-1"
             eb create demo-env --single || true
             eb setenv SERVER_PORT=5000
             eb deploy demo-env
