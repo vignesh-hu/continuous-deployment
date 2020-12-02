@@ -70,7 +70,6 @@ jobs:
       - run:
           name: Create AWS credentials manually
           command: |
-            mkdir ~/.aws
             touch ~/.aws/config
             chmod 600 ~/.aws/config
             echo "[profile app]" > ~/.aws/config
