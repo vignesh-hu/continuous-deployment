@@ -57,17 +57,32 @@ jobs:
     working_directory: ~/app
     docker:
       - image: chriscamicas/awscli-awsebcli
+      - image: circleci/python:2.7
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: ~/app/target
 
       - run:
-          name: Deploying
+          name: Install awscli
           command: |
-            eb use demo-dev --profile demo
-            eb deploy --profile demo
-            eb status
+            sudo pip install awsebcli --upgrade
+      - run:
+          name: Create AWS credentials manually
+          command: |
+            mkdir ~/.aws
+            touch ~/.aws/config
+            chmod 600 ~/.aws/config
+            echo "[profile app]" > ~/.aws/config
+            echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
+            echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
+            ls
+      - run:
+          name: Deploy to EB if branch is Master
+          command: |
+            eb use demo-dev --profile app  
+            eb deploy --profile app
+         
 #
 # Workflows: A workflow is a set of rules for defining a collection of jobs and their run order.
 # In this demo, "aws-deploy" jobs is triggered only after the success of "maven-build" jobs
