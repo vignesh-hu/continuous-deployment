@@ -78,8 +78,8 @@ jobs:
       - run:
           name: Deploy to EB if branch is Master
           command: |
-            eb use demo-dev --profile app --region "us-east-1"
-            eb deploy --profile app
+            eb use Sample-dev --profile app --region "us-east-1"
+            eb deploy --profile sample
          
 #
 # Workflows: A workflow is a set of rules for defining a collection of jobs and their run order.
