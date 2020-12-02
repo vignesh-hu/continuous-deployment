@@ -2,12 +2,12 @@
 
 branch-defaults:
   master:
-    environment: demo-dev
+    environment: Sample-dev
     group_suffix: null
 global:
-  application_name: demo
+  application_name: sample
   branch: null
-  default_ec2_keyname: demo
+  default_ec2_keyname: sample
   default_platform: java 8
   default_region: us-east-1
   include_git_submodules: true
