@@ -6,7 +6,7 @@ branch-defaults:
   global: 
   application_name: vigneshdemo
   AWS_ACCESS_KEY_ID: AKIA6Q42TZMMGZB6LP4C
-  AWS_SECERT_KEY_ID: Xid38xVjT+YCTrQ3f3T9j3y68qE5LTBJk0F0sMWU
+  AWS_SECRET_KEY_ID: Xid38xVjT+YCTrQ3f3T9j3y68qE5LTBJk0F0sMWU
   default_platform: Java 8 running on 64bit Amazon Linux/2.11.1
   default_region: us-east-1
   sc: git
