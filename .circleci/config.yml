@@ -65,7 +65,7 @@ jobs:
       - run:
           name: Deploying
           command: |
-            eb deploy demo-env
+            eb deploy --profile default
             eb status
 #
 # Workflows: A workflow is a set of rules for defining a collection of jobs and their run order.
