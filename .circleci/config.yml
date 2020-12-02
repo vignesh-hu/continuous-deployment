@@ -65,12 +65,11 @@ jobs:
       - run:
           name: Deploying
           command: |
-           aws elasticbeanstalk create-application-version \
-            --application-name vigneshdemo \
-            --source-bundle target/demo-1.0.jar \
-            --version-label "Ver-${{ github.sha }}" \
-            --description "CommitSHA-${{ github.sha }}"
-           aws elasticbeanstalk update-environment --environment-name  vigneshdemo-dev --version-label "Ver-${{ github.sha }}"
+            eb init continuous-deployment-demo -p "64bit Amazon Linux 2017.09 v2.6.4 running Java 8" --region "ca-central-1"
+            eb create circleci-env --single || true
+            eb setenv SERVER_PORT=5000
+            eb deploy circleci-env
+            eb status
 #
 # Workflows: A workflow is a set of rules for defining a collection of jobs and their run order.
 # In this demo, "aws-deploy" jobs is triggered only after the success of "maven-build" jobs
