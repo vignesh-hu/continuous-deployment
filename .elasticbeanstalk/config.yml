@@ -2,9 +2,9 @@
 
 branch-defaults:
   master:
-    environment: vigneshdemo-env
+    environment: demo-env
   global: 
-  application_name: vigneshdemo
+  application_name: demo
   default_platform: Java 8 running on 64bit Amazon Linux/2.11.1
   default_region: us-east-1
   sc: git
