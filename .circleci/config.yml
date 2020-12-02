@@ -65,10 +65,9 @@ jobs:
       - run:
           name: Deploying
           command: |
-            eb init vigneshdemo -p "Java 8 running on 64bit Amazon Linux/2.11.1" --region "us-east-1"
-            eb create vigneshdemo-env --single || true
+            eb create demo-env --single || true
             eb setenv SERVER_PORT=5000
-            eb deploy vigneshdemo-env
+            eb deploy demo-env
             eb status
 #
 # Workflows: A workflow is a set of rules for defining a collection of jobs and their run order.
