@@ -2,11 +2,20 @@
 
 branch-defaults:
   master:
-    environment: demo-env
-  global: 
+    environment: demo-dev
+    group_suffix: null
+global:
   application_name: demo
-  default_platform: Java 8 running on 64bit Amazon Linux/2.11.1
+  branch: null
+  default_ec2_keyname: demo
+  default_platform: java 8
   default_region: us-east-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: null
+  repository: null
   sc: git
 deploy:
   artifact: target/demo-1.0.jar
