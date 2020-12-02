@@ -65,10 +65,10 @@ jobs:
       - run:
           name: Deploying
           command: |
-            eb init continuous-deployment-demo -p "64bit Amazon Linux 2017.09 v2.6.4 running Java 8" --region "ca-central-1"
-            eb create circleci-env --single || true
+            eb init vigneshdemo -p "Java 8 running on 64bit Amazon Linux/2.11.1" --region "us-east-1"
+            eb create vigneshdemo-env --single || true
             eb setenv SERVER_PORT=5000
-            eb deploy circleci-env
+            eb deploy vigneshdemo-env
             eb status
 #
 # Workflows: A workflow is a set of rules for defining a collection of jobs and their run order.
