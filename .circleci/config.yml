@@ -3,7 +3,7 @@ version: 2
 # Jobs are a collection of Steps. All of the steps in the job are executed in a single unit which consumes a CircleCI container from your plan while it’s running.
 # Job: "maven-build" job test and package demo application with Maven, persist JAR in workspace and store it as Artefacts
 # Job: "aws-deploy" job get binary from attached workspace and deploy to AWS
-# https://circleci.com/docs/2.0/jobs-steps/
+# https://circleci.com/docs/2.0/jobs-steps
 #
 jobs:
   # Job to Build Maven application
@@ -57,7 +57,6 @@ jobs:
     working_directory: ~/app
     docker:
       - image: chriscamicas/awscli-awsebcli
-      - image: circleci/python:2.7
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
