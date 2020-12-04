@@ -5,9 +5,6 @@ version: 2
 # Job: "aws-deploy" job get binary from attached workspace and deploy to AWS
 # https://circleci.com/docs/2.0/jobs-steps
 #
-orbs:
-  aws-s3: circleci/aws-s3@dev:alpha
-  orb-tools: circleci/orb-tools@9.3
 jobs:
   # Job to Build Maven application
   maven-build:
@@ -57,9 +54,9 @@ jobs:
 
   # Job to Deploy spring-boot demo application to AWS BeanStalk
   aws-deploy:
-    working_directory: ~/repo
+#    working_directory: ~/repo
     docker:
-      - image: 'cimg/python:3.6'
+      - image: my-awscli-image:1.0
       - image: account-id.dkr.ecr.us-east-1.amazonaws.com/org/repo:0.1
         aws_auth:
            aws_access_key_id    : $aws_access_id  # can specify string literal values
@@ -71,9 +68,12 @@ jobs:
       
       - run:
         - name: set aws credentials
+          working_directory: ~/repo 
           command: |
-            sudo yum install -y python-pip
-            sudo yum install python2.7-dev
+            sudo yum install python3.4-dev
+            curl -O https://bootstrap.pypa.io/get-pip.py
+            python3.4 get-pip.py --user
+            pip install awscli --upgrade --user
             sudo pip install awscli
             aws configure set aws_access_key_id $aws_access_id
             aws configure set aws_secret_access_key $aws_secret_key_id
