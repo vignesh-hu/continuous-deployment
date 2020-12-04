@@ -67,9 +67,9 @@ jobs:
           at: ~/app/target
       
       - run:
-      - aws-s3/copy:
-          from: target/demo-1.0.jar
-          to: "s3://flash-github/$CIRCLE_BUILD_NUM-demo-1.0.jar" 
+        - aws-s3/copy:
+           from: target/demo-1.0.jar
+           to: "s3://flash-github/$CIRCLE_BUILD_NUM-demo-1.0.jar" 
          
        # - name:copy to s3 bucket
        #  arguments: '--dryrun'
