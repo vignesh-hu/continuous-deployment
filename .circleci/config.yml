@@ -62,7 +62,7 @@ jobs:
           aws_secret_access_key: $aws_secret_key_id
           aws-region           : $aws_region
     steps:
-     - attach_workspace:
+      - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: ~/app/target
       - run:
