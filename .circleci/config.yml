@@ -54,7 +54,6 @@ jobs:
 
   # Job to Deploy spring-boot demo application to AWS BeanStalk
   aws-deploy:
-    working_directory: ~/app
     runs-on: ubuntu-latest
     needs: [my_ci_pipeline]
        
