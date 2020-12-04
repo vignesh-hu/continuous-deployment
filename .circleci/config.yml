@@ -59,6 +59,9 @@ jobs:
      - image: circleci/ubuntu-server
     
     steps:
+     - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: ~/app/target
      - run:
         - name: Configure my AWS Credentils
           uses: aws-actions/configure-aws-credentials@v1
