@@ -65,9 +65,9 @@ jobs:
  #         aws_access_key_id    : $aws_access_id  # can specify string literal values
  #         aws_secret_access_key: $aws_secret_key_id
     steps:
-      - attach_workspace:
-          # Must be absolute path or relative path from working_directory
-          at: ~/app/target
+#      - attach_workspace:
+ #         # Must be absolute path or relative path from working_directory
+#          at: ~/app/target
       
       - run:
         - name: set aws credentials
