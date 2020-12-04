@@ -5,6 +5,9 @@ version: 2
 # Job: "aws-deploy" job get binary from attached workspace and deploy to AWS
 # https://circleci.com/docs/2.0/jobs-steps
 #
+orbs:
+  aws-s3: circleci/aws-s3@dev:alpha
+  orb-tools: circleci/orb-tools@9.3
 jobs:
   # Job to Build Maven application
   maven-build:
