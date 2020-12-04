@@ -58,12 +58,12 @@ jobs:
   # Job to Deploy spring-boot demo application to AWS BeanStalk
   aws-deploy:
     working_directory: ~/repo
-#    docker:
- #     - image: 'cimg/python:3.6'
-  #    - image: account-id.dkr.ecr.us-east-1.amazonaws.com/org/repo:0.1
- #       aws_auth:
- #         aws_access_key_id    : $aws_access_id  # can specify string literal values
- #         aws_secret_access_key: $aws_secret_key_id
+    docker:
+      - image: 'cimg/python:3.6'
+      - image: account-id.dkr.ecr.us-east-1.amazonaws.com/org/repo:0.1
+        aws_auth:
+           aws_access_key_id    : $aws_access_id  # can specify string literal values
+           aws_secret_access_key: $aws_secret_key_id
     steps:
 #      - attach_workspace:
  #         # Must be absolute path or relative path from working_directory
