@@ -64,6 +64,10 @@ jobs:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: ~/app/target
+      - aws-cli/setup:
+          aws-access-key-id: $aws_access_id
+          aws-region: us-east-1
+          aws-secret-access-key: $aws_secret_key_id
       - run:
         - name: copy to s3 bucket
           command : aws s3 cp target/demo-1.0.jar  s3://deployment123/$CIRCLE_BUILD_NUM-demo-1.0.jar 
