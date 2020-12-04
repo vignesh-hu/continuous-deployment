@@ -54,9 +54,8 @@ jobs:
 
   # Job to Deploy spring-boot demo application to AWS BeanStalk
   aws-deploy:
-    runs-on: ubuntu-latest
-    needs: [my_ci_pipeline]
-       
+    Docker:
+      - image: circleci/ubutnu:latest   
        steps:
          - name: Configure my AWS Credentils
            uses: aws-actions/configure-aws-credentials@v1
