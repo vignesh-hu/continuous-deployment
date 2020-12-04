@@ -1,4 +1,4 @@
-version: 1.0
+version: 2
 #
 # Jobs are a collection of Steps. All of the steps in the job are executed in a single unit which consumes a CircleCI container from your plan while it’s running.
 # Job: "maven-build" job test and package demo application with Maven, persist JAR in workspace and store it as Artefacts
@@ -54,9 +54,8 @@ jobs:
 
   # Job to Deploy spring-boot demo application to AWS BeanStalk
   aws-deploy:
-    docker:
-      - image: circleci/ubuntu-server
     working_directory: ~/repo
+    
     Steps:
      - run:
         - name: Configure my AWS Credentils
