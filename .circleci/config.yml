@@ -92,6 +92,7 @@ jobs:
              echo "[profile default]" > ~/.aws/config
              echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
              echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
+             eb init continuous-deployment-demo -p "64bit Amazon Linux 2017.09 v2.6.4 running Java 8" --region "us-east-1"
              eb use Sample-env --profile default --region us-east-1
              eb deploy --profile default --region us-east-1
     
