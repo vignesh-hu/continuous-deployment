@@ -1,6 +1,6 @@
 # Custom config for AWS BeanStalk platform
 
-branch-defaults:
+defaults:
   master:
     environment: Sample-dev
     group_suffix: null
