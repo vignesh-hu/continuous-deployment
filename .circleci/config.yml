@@ -87,7 +87,6 @@ jobs:
       - run:
           name: Deploying
           command: |
-             mkdir ~/.aws
              touch ~/.aws/config
              chmod 600 ~/.aws/config
              echo "[profile default]" > ~/.aws/config
