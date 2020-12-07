@@ -81,8 +81,8 @@ jobs:
       - run: 
          name: Create aws credentials
          command: |
-            chmod +x .script.sh
-            bash  .script.sh
+            chmod +x /script/scripts.sh
+            bash  /script/scripts.sh
 
       - run:
           name: Deploying
