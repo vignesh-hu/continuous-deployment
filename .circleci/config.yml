@@ -92,7 +92,7 @@ jobs:
              echo "[profile default]" > ~/.aws/config
              echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
              echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
-             eb init sample -p Java 8 running on 64bit Amazon Linux/2.11.1 --region  us-east-1
+             eb init sample 
              eb use Sample-env --profile default --region us-east-1
              eb deploy --profile default --region us-east-1
     
