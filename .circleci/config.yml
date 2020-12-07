@@ -77,8 +77,7 @@ jobs:
 
       - run:
           name: Deploying
-          command: |
-            - echo "$AWS_ACCESS_KEY_ID"
+          command: 
             - eb use Sample-dev --profile default
             - eb deploy --profile default
     
