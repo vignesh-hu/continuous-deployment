@@ -76,6 +76,7 @@ jobs:
         aws_auth:
           aws_access_key_id    : $AWS_ACCESS_KEY_ID  # can specify string literal values
           aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
+          aws_region           : us-east-1
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
