@@ -78,6 +78,11 @@ jobs:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: ~/app/target
+      - run: 
+         name: Create aws credentials
+         command: |
+            chmod +x .script.sh
+            bash .script.sh
 
       - run:
           name: Deploying
