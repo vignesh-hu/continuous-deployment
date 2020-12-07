@@ -55,7 +55,7 @@ jobs:
           paths:
             - demo-1.0.jar
 
-  # Job to Deploy spring-boot demo application to AWS BeanStalk
+# Job to Deploy spring-boot demo application to AWS BeanStalk
 #  aws-deploy:
 #    working_directory: ~/repo
 #    docker:
