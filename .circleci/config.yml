@@ -95,7 +95,6 @@ jobs:
              eb use Sample-env --profile default --region us-east-1
              eb deploy --profile default --region us-east-1
     
-#
 # Workflows: A workflow is a set of rules for defining a collection of jobs and their run order.
 # In this demo, "aws-deploy" jobs is triggered only after the success of "maven-build" jobs
 # see https://circleci.com/docs/2.0/workflows/
