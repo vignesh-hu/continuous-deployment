@@ -1,8 +1,8 @@
 # Custom config for AWS BeanStalk platform
 
-defaults:
+branch-defaults:
   master:
-    environment: Sample-dev
+    environment: Sample-env
     group_suffix: null
 global:
   application_name: sample
