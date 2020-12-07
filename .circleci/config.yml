@@ -66,7 +66,7 @@ jobs:
  #         # Must be absolute path or relative path from working_directory
 #          at: ~/app/target
       
-   aws-deploy:
+  aws-deploy:
     working_directory: ~/app
     docker:
       - image: chriscamicas/awscli-awsebcli
