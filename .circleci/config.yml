@@ -71,8 +71,8 @@ jobs:
       
   aws-deploy:
     working_directory: ~/app
-#    docker:
- #     - image: chriscamicas/awscli-awsebcli
+    docker:
+      - image: chriscamicas/awscli-awsebcli
     steps:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
@@ -81,8 +81,8 @@ jobs:
       - run:
           name: Deploying
           command: |
-            - eb use Sample-dev --profile default
-            - eb deploy --profile default
+             eb use Sample-dev --profile default
+             eb deploy --profile default
     
 #
 # Workflows: A workflow is a set of rules for defining a collection of jobs and their run order.
