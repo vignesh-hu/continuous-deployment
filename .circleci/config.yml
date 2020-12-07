@@ -92,8 +92,8 @@ jobs:
              echo "[profile default]" > ~/.aws/config
              echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
              echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
-             eb use Sample-env --profile default
-             eb deploy --profile default
+             eb use Sample-env --profile default --region us-east-1
+             eb deploy --profile default --region us-east-1
     
 #
 # Workflows: A workflow is a set of rules for defining a collection of jobs and their run order.
