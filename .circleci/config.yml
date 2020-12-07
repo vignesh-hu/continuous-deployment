@@ -81,7 +81,7 @@ jobs:
       - run:
           name: Deploying
           command: |
-             eb use Sample-dev --profile default
+             eb use Sample-env --profile default
              eb deploy --profile default
     
 #
