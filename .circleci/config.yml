@@ -78,15 +78,21 @@ jobs:
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
           at: ~/app/target
-      - run: 
-         name: Create aws credentials
-         command: |
-            chmod +x ~/script/scripts.sh
-            bash  ~/script/scripts.sh
+#      - run: 
+ #        name: Create aws credentials
+ #        command: |
+ #           chmod +x ~/script/scripts.sh
+ #           bash  ~/script/scripts.sh
 
       - run:
           name: Deploying
           command: |
+             mkdir ~/.aws
+             touch ~/.aws/config
+             chmod 600 ~/.aws/config
+             echo "[profile default]" > ~/.aws/config
+             echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
+             echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config
              eb use Sample-env --profile default
              eb deploy --profile default
     
